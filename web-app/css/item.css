@@ -1,0 +1,17 @@
+.feed-items .source {
+    font-weight: bold;
+}
+
+.feed-items .img-frame {
+    float: left;
+    width: 102px; 
+    height: 100px; 
+    overflow: hidden;
+    margin: 8px 8px 0 0;
+    padding: 2px;
+    border: 1px solid #999;
+}
+
+.feed-items img {
+    max-height: 100px; 
+}

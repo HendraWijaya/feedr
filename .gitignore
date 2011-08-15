@@ -1,0 +1,11 @@
+*.iws
+.settings
+.classpath
+.project
+logs
+stacktrace.log
+target
+target-eclipse
+/plugins
+/web-app/plugins
+/web-app/WEB-INF/classes

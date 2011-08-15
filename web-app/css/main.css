@@ -1,0 +1,163 @@
+/* ---- START Blueprint Reset ---- */
+body {
+	color: #333;
+	font: 13px/150% Verdana, Tahoma, sans-serif;
+    background-color: #F3F3F3;
+}
+
+h1 {
+	font-family: Cambria,Georgia,Verdana,Tahoma,Arial,Serif;
+	font-weight: bold;
+	margin: 0 0 .1em;
+	font-size: 2.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+tbody tr:nth-child(even) td, tbody tr.even td {background:transparent;}
+
+a {
+    color: #4782AC;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #386DAF;
+    text-decoration: underline;
+}
+
+dt {
+    color: #666;
+}
+
+/* Forms */
+label {font-weight:normal;}
+
+.error, .alert, .notice, .success, .info {
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    border-width: 3px;
+    margin: 0 0 2.5em;
+}
+
+.error ul {
+    margin: 0;
+}
+
+/* Typography */
+.quiet a {
+    color: #666;
+}
+
+/* ---- END Blueprint Reset ---- */
+
+#logo {
+    font: 2.8em Cambria,Georgia,Verdana,Tahoma,Arial,Serif;
+    display: block;
+    float: left; 
+    color: #333333;
+    font-weight: bold;
+    line-height: 1em; 
+    letter-spacing: 2px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6)
+}
+
+a#logo:hover {
+    text-decoration: none;
+}
+
+/* Header */
+#header {
+	padding: 1.5em 1em;
+    border-bottom: 6px solid #D5D5D5;
+    border-left: 8px solid #D5D5D5;
+    border-right: 8px solid #D5D5D5;
+    background: #DFDFDF;
+    box-shadow: 0 0 3px #333;
+    margin: 0 0 3em;
+}
+
+/* Search */
+#search-box {
+	margin: 0 0 0 126px;
+	white-space: nowrap;
+}
+
+#search-key {
+	font-size: 16px;
+	width: 330px;
+	margin: 0;
+	border: 1px solid #C9C9C9;
+}
+
+.search.button {
+    font-size: 16px;
+    margin-left: -6px;
+    border-radius: 0 .3em .3em 0;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    color: #888;  
+    margin: 0 0 0.5em  
+}
+
+.breadcrumb a {
+    font-weight: bold;
+}
+
+/* Title */
+.title {
+/* 	margin: 0 0 1em; */
+	padding: 5px 10px 10px;
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #666;
+/* 	background: #DFDFDF; */
+    background: #E6E7E6;
+}
+
+.title p {
+	color: #666;
+	margin: 0;
+}
+
+.title .actions {
+    margin: .5em 0 0;
+}
+.title .actions a {
+    padding: 3px 8px 4px;
+    background: #FFF;
+    font-size: 11px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+
+/* Pagination */
+
+.paginate {
+    color: #666;
+    overflow: hidden;
+    padding: 10px 3px;
+}
+.paginate a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginate span {
+    padding: 2px 3px;
+}
+
+.field-error input, 
+.field-error input:focus {
+	background: #FFFFCE;
+	border: 1px solid #F0C000;
+}
