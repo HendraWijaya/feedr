@@ -16,28 +16,28 @@ import org.slf4j.LoggerFactory
  * @author Hendra
  *
  */
-abstract 
+abstract
 class HttpReceiver {
-    private static Logger logger = LoggerFactory.getLogger(HttpReceiver.class)
-    
-    protected InputStream getInputStream(HttpResponse response) {
-        response.entity.content
-    }
-    
-    protected byte[] getInputBytes(HttpResponse response) {
-        getInputStream(response).bytes
-    }
-    
-    // Content-Type: text/html; charset=UTF-8
-    protected String getCharset(HttpResponse response) {
-        ParserRegistry.getCharset(response)
-    }
-    
-    protected String getContentType(HttpResponse response) {
-        ParserRegistry.getContentType(response)
-    }
-    
-    protected void onFailure(String url, HttpResponseDecorator response) {
-        logger.error "Unable to get {}: {} - {}", url, response.status, response.statusLine.reasonPhrase
-    }
+   private static Logger logger = LoggerFactory.getLogger(HttpReceiver.class)
+
+   protected InputStream getInputStream(HttpResponse response) {
+      response.entity.content
+   }
+
+   protected byte[] getInputBytes(HttpResponse response) {
+      getInputStream(response).bytes
+   }
+
+   // Content-Type: text/html; charset=UTF-8
+   protected String getCharset(HttpResponse response) {
+      ParserRegistry.getCharset(response)
+   }
+
+   protected String getContentType(HttpResponse response) {
+      ParserRegistry.getContentType(response)
+   }
+
+   protected void onFailure(String url, HttpResponseDecorator response) {
+      logger.error "Unable to get {}: {} - {}", url, response.status, response.statusLine.reasonPhrase
+   }
 }

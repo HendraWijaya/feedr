@@ -13,19 +13,29 @@
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
-grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
-                      xml: ['text/xml', 'application/xml'],
-                      text: 'text/plain',
-                      js: 'text/javascript',
-                      rss: 'application/rss+xml',
-                      atom: 'application/atom+xml',
-                      css: 'text/css',
-                      csv: 'text/csv',
-                      all: '*/*',
-                      json: ['application/json','text/json'],
-                      form: 'application/x-www-form-urlencoded',
-                      multipartForm: 'multipart/form-data'
-                    ]
+grails.mime.types = [ 
+   html: [
+      'text/html',
+      'application/xhtml+xml'
+   ],
+   xml: [
+      'text/xml',
+      'application/xml'
+   ],
+   text: 'text/plain',
+   js: 'text/javascript',
+   rss: 'application/rss+xml',
+   atom: 'application/atom+xml',
+   css: 'text/css',
+   csv: 'text/csv',
+   all: '*/*',
+   json: [
+      'application/json',
+      'text/json'
+   ],
+   form: 'application/x-www-form-urlencoded',
+   multipartForm: 'multipart/form-data'
+]
 
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
@@ -59,95 +69,97 @@ def log4jLogsDirectory = './logs'
 
 // set per-environment serverURL stem for creating absolute links
 environments {
-    production {
-        grails.serverURL = "http://www.changeme.com"
-    }
-    development {
-        grails.serverURL = "http://localhost:8080/${appName}"
-        
-        // log4j
-        log4jConsoleLogLevel = org.apache.log4j.Level.DEBUG
-        log4jFileLogLevel = org.apache.log4j.Level.DEBUG
-    }
-    test {
-        grails.serverURL = "http://localhost:8080/${appName}"
-    }
+   production { 
+      grails.serverURL = "http://www.changeme.com" 
+   }
+   development {
+      grails.serverURL = "http://localhost:8080/${appName}"
+
+      // log4j
+      log4jConsoleLogLevel = org.apache.log4j.Level.DEBUG
+      log4jFileLogLevel = org.apache.log4j.Level.DEBUG
+   }
+   test { 
+      grails.serverURL = "http://localhost:8080/${appName}" 
+   }
 
 }
 
 // log4j configuration
 log4j = {
-    // Example of changing the log pattern for the default console
-    // appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+   // Example of changing the log pattern for the default console
+   // appender:
+   //
+   //appenders {
+   //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+   //}
 
-    appenders {
-        console(
-			name: "stdout", 
-			threshold: log4jConsoleLogLevel, 
-			layout: log4jLayoutPattern)
-			// Making sure it doesn't output any level above info such as warn and error
-			// because stderr will handle those levels. 
-			.addFilter(
-				new org.apache.log4j.varia.LevelRangeFilter(
-					levelMin: org.apache.log4j.Level.DEBUG, 
-					levelMax: org.apache.log4j.Level.INFO))
-		console(
-			name: "stderr", 
-			threshold: org.apache.log4j.Level.WARN, 
-			layout: log4jLayoutPattern, 
-			target: "System.err")
-			.addFilter(
-				new org.apache.log4j.varia.LevelRangeFilter(
-					levelMin: org.apache.log4j.Level.WARN,
-					levelMax: org.apache.log4j.Level.FATAL))
-        rollingFile(
-			name:"file", 
-			file: "${log4jLogsDirectory}/${appName}.log", 
-			threshold: log4jFileLogLevel, 
-			maxFileSize:"1MB", 
-			maxBackupIndex: 10, 
-			layout: log4jLayoutPattern, 
-			'append': true)
-        rollingFile(
-			name:"error", 
-			file: "${log4jLogsDirectory}/${appName}-error.log", 
-			threshold: org.apache.log4j.Level.ERROR, 
-			maxFileSize:"1MB", 
-			maxBackupIndex: 10, 
-			layout: log4jLayoutPattern, 
-			'append':true)
-        rollingFile(
-			name: "stacktrace", 
-			file: "${log4jLogsDirectory}/${appName}-stacktrace.log",
-			maxFileSize: "1MB", 
-			maxBackupIndex: 10)
-    }
-    
-    error  'org.grails.plugin', // Resource plugin
-           'grails.app.service.org.grails.plugin.resource', // Resource plugin
-           'org.codehaus',
-           'org.apache',
-           'org.springframework',
-           'org.hibernate',
-           'org.quartz',
-           'net.sf',
-           'feedr',
-           'feedr.fetcher.SnapshotSyndFeedReceiver'
-           
-    warn   'org.mortbay.log',
-           'grails.spring'
-    
-    debug  'feedr.fetcher',
-           // HttpBuilder
-           'org.apache.http.headers'
-           //'org.apache.http.wire'
-    
-    root {
-        debug 'stdout', 'stderr', 'file', 'error'
-        additivity = true
-    }
+   appenders {
+      console(
+            name: "stdout",
+            threshold: log4jConsoleLogLevel,
+            layout: log4jLayoutPattern)
+            // Making sure it doesn't output any level above info such as warn and error
+            // because stderr will handle those levels.
+            .addFilter(
+               new org.apache.log4j.varia.LevelRangeFilter(
+               levelMin: org.apache.log4j.Level.DEBUG,
+               levelMax: org.apache.log4j.Level.INFO)
+             )
+      console(
+            name: "stderr",
+            threshold: org.apache.log4j.Level.WARN,
+            layout: log4jLayoutPattern,
+            target: "System.err")
+            .addFilter(
+               new org.apache.log4j.varia.LevelRangeFilter(
+               levelMin: org.apache.log4j.Level.WARN,
+               levelMax: org.apache.log4j.Level.FATAL)
+             )
+      rollingFile(
+            name:"file",
+            file: "${log4jLogsDirectory}/${appName}.log",
+            threshold: log4jFileLogLevel,
+            maxFileSize:"1MB",
+            maxBackupIndex: 10,
+            layout: log4jLayoutPattern,
+            'append': true)
+      rollingFile(
+            name:"error",
+            file: "${log4jLogsDirectory}/${appName}-error.log",
+            threshold: org.apache.log4j.Level.ERROR,
+            maxFileSize:"1MB",
+            maxBackupIndex: 10,
+            layout: log4jLayoutPattern,
+            'append':true)
+      rollingFile(
+            name: "stacktrace",
+            file: "${log4jLogsDirectory}/${appName}-stacktrace.log",
+            maxFileSize: "1MB",
+            maxBackupIndex: 10)
+   }
+
+   error 'org.grails.plugin', // Resource plugin
+         'grails.app.service.org.grails.plugin.resource', // Resource plugin
+         'org.codehaus',
+         'org.apache',
+         'org.springframework',
+         'org.hibernate',
+         'org.quartz',
+         'net.sf',
+         'feedr',
+         'feedr.fetcher.SnapshotSyndFeedReceiver'
+
+   warn  'org.mortbay.log',
+         'grails.spring'
+
+   debug 'feedr.fetcher',
+         // HttpBuilder
+         'org.apache.http.headers'
+   //'org.apache.http.wire'
+
+   root {
+      debug 'stdout', 'stderr', 'file', 'error'
+      additivity = true
+   }
 }

@@ -11,33 +11,17 @@ import feedr.Item
  *
  */
 class ItemFetcher {
-    private static Logger logger = LoggerFactory.getLogger(ItemFetcher.class);
-    
-    ItemImageFetcher imageFetcher
-    ItemPageFetcher pageFetcher
- 
-	void run() {
-		try {
-			imageFetcher.run()
-		    pageFetcher.run()
-		} catch (Exception e) {
-			logger.error e.toString(), e
-		}
-	}
-	
-//	@Transactional
-//    void retrieve(Item item) {
-//		Thread t = Thread.currentThread()
-//		t.setName(item.url)
-//		
-//		logger.debug "Start fetching item: {}", item.url
-//		try {
-//			imageFetcher.retrieve(item.images)
-//			pageFetcher.retrieve(item.page)
-//		} catch (Exception e) {
-//			logger.error e.toString(), e
-//		}
-//		
-//		logger.debug "Finish fetching item: {}", item.url
-//	}
+   private static Logger logger = LoggerFactory.getLogger(ItemFetcher.class);
+
+   ItemImageFetcher imageFetcher
+   ItemPageFetcher pageFetcher
+
+   void run() {
+      try {
+         imageFetcher.run()
+         pageFetcher.run()
+      } catch (Exception e) {
+         logger.error e.toString(), e
+      }
+   }
 }

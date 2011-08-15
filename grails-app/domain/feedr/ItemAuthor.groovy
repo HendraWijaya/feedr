@@ -8,15 +8,15 @@ package feedr
  *
  */
 class ItemAuthor {
-    String name
-    
-    static belongsTo = [item: Item]
-	
-	static constraints = {
-		name(blank: false)
-	}
-	
-	static mapping = {
-		version false
-	}
+   String name
+
+   static belongsTo = [item: Item]
+
+   static constraints = { 
+      name(blank: false)
+   }
+
+   static mapping = { 
+      version false 
+   }
 }

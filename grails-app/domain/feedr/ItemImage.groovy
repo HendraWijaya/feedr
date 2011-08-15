@@ -8,5 +8,5 @@ package feedr
  *
  */
 class ItemImage extends ItemMedia {
-    static belongsTo = [item: Item]
+   static belongsTo = [item: Item]
 }

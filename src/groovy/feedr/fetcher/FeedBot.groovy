@@ -12,25 +12,25 @@ import feedr.Feed
 import feedr.Feed.Status
 
 class FeedBot {
-    private static final Logger log = LoggerFactory.getLogger(FeedBot.class)
+   private static final Logger log = LoggerFactory.getLogger(FeedBot.class)
 
-    FeedFetcher feedFetcher
+   FeedFetcher feedFetcher
 
-    void run() {
-        def feeds
-        
-        Feed.withTransaction {
-            feeds = Feed.findAllByStatus(Feed.Status.On)
-        }
+   void run() {
+      def feeds
 
-        withPool {
-            feeds.eachParallel { Feed feed ->
-				// This is a new thread and feed has been detached from the session.
-				// It loses its persistent context.
-				// We should re-attach it to a session before making changes.
-				// It's like a new HTTP request with form data of an feed
-                feedFetcher.retrieve(feed)
-            }
-        }
-    }
+      Feed.withTransaction {
+         feeds = Feed.findAllByStatus(Feed.Status.On)
+      }
+
+      withPool {
+         feeds.eachParallel { Feed feed ->
+            // This is a new thread and feed has been detached from the session.
+            // It loses its persistent context.
+            // We should re-attach it to a session before making changes.
+            // It's like a new HTTP request with form data of an feed
+            feedFetcher.retrieve(feed)
+         }
+      }
+   }
 }

@@ -15,11 +15,11 @@ import feedr.Item
  *
  */
 class ItemBot {
-    private static final Logger log = LoggerFactory.getLogger(ItemBot.class)
+   private static final Logger log = LoggerFactory.getLogger(ItemBot.class)
 
-    ItemFetcher itemFetcher
+   ItemFetcher itemFetcher
 
-    void run() {
-    	itemFetcher.run()
-    }
+   void run() {
+      itemFetcher.run()
+   }
 }

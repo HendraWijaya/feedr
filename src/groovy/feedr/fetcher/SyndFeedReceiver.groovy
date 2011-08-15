@@ -12,5 +12,5 @@ import feedr.Item
 import feedr.ItemFactory
 
 interface SyndFeedReceiver {
-    void onReceiveSyndFeed(Feed feed, SyndFeed syndFeed)
+   void onReceiveSyndFeed(Feed feed, SyndFeed syndFeed)
 }
