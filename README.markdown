@@ -16,6 +16,9 @@ FeedR is an application that fetches feeds through HTTP concurrently with [GPars
 
   7. Many more to be added...
 
+## Administration Site
+The site URL starts at http://localhost:8080/feedr/source/list
+
 ## Status
 This application is still in development and not yet ready for production.
 
