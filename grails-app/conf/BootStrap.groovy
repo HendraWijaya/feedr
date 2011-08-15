@@ -15,8 +15,8 @@ class BootStrap {
          case Environment.DEVELOPMENT:
             loadSources()
 
-         // Startup the HSQLDB browser
-         //org.hsqldb.util.DatabaseManagerSwing.main( ['--url', 'jdbc:hsqldb:mem:devDB'] as String[] )
+           // Startup the HSQLDB browser
+           //org.hsqldb.util.DatabaseManagerSwing.main( ['--url', 'jdbc:hsqldb:mem:devDB'] as String[] )
             break
          case Environment.PRODUCTION:
             println "No special configuration required"
