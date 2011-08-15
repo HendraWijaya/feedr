@@ -1,11 +1,11 @@
 package feedr.source
 
-class FoxNewsSource {
-   def source() {
+class FoxNewsSource extends SourceDef {
+   def sourceDef() {
       [name: "Fox News", url: "http://www.foxnews.com"]
    }
 
-   def feeds() {
+   def feedsDef() {
       [
          [
             name: "National", url: "http://feeds.foxnews.com/foxnews/national?format=xml"
