@@ -28,6 +28,6 @@ class BootStrap {
 
    void loadSources() {
       new TechCrunchSource().load()
-      new ReutersSource().load()
+      new FoxNewsSource().load()
    }
 }
