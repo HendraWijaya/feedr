@@ -20,7 +20,7 @@ Here are some [screenshots](http://wijaya.posterous.com/feedr-asynchronous-feed-
   7. Many more to be added...
 
 ## Running
-The application is using Grails 1.3.7. Assuming you have Grails 1.3.7 environment setup in your machine, to run it in the development mode, you can type the following in your shell:
+The application is using Grails 1.3.7. Assuming you have Grails 1.3.7 environment setup in your machine, to run it in the development mode, you can type the following in your shell under the root of the project:
 
     $ grails run-app
 
